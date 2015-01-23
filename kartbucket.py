@@ -1,6 +1,7 @@
 import os
 import newrelic.agent
 from flask import Flask, url_for, render_template, request, jsonify
+from model import database
 
 ##### Config #####
 
@@ -14,12 +15,15 @@ try:
 except KeyError as error:
     app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://localhost:5432"
 
+database.db.init_app(app)
+
 
 ##### Pages #####
 
 
 @app.route('/')
 def index():
+    database.create_tables()
     return "Hello, world!"
 
 
