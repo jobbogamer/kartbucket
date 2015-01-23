@@ -53,6 +53,39 @@ class Time(db.Model):
 
     proof_url = db.Column(db.String)
 
+    def __lt__(self, other):
+        if self.minutes < other.minutes:
+            return True
+
+        elif (self.minutes == other.minutes) and (self.seconds < other.seconds):
+            return True
+
+        elif (self.minutes == other.minutes) and (self.seconds == other.seconds) and (self.milliseconds < other.milliseconds):
+            return True
+
+        else:
+            return False
+
+
+    def __le__(self, other):
+        return (self < other) or (self == other)
+
+
+    def __gt__(self, other):
+        return not (self <= other)
+
+
+    def __ge__(self, other):
+        return not (self < other)
+
+
+    def __eq__(self, other):
+        return (self.minutes == other.minutes) and (self.seconds == other.seconds) and (self.milliseconds == other.milliseconds)
+
+
+    def __ne__(self, other):
+        return not (self == other)
+
 
 ##### Interaction functions #####
 
