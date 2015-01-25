@@ -78,6 +78,10 @@ class Time(db.Model):
         return not (self == other)
 
 
+    def __sub__(self, other):
+        return self.milliseconds - other.milliseconds
+
+
 ##### Interaction functions #####
 
 
