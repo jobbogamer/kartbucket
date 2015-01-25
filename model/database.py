@@ -8,7 +8,9 @@ db = SQLAlchemy()
 
 class Game(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
+    short_name = db.Column(db.String)
+    full_name = db.Column(db.String)
+    choice_of_kart = db.Column(db.Boolean)
     allows_customisation = db.Column(db.Boolean)
 
 
@@ -27,20 +29,9 @@ class Person(db.Model):
 
 class Time(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    minutes = db.Column(db.Integer)
-    seconds = db.Column(db.Integer)
     milliseconds = db.Column(db.Integer)
-
-    split1_mins = db.Column(db.Integer)
-    split1_secs = db.Column(db.Integer)
     split1_mils = db.Column(db.Integer)
-
-    split2_mins = db.Column(db.Integer)
-    split2_secs = db.Column(db.Integer)
     split2_mils = db.Column(db.Integer)
-
-    split3_mins = db.Column(db.Integer)
-    split3_secs = db.Column(db.Integer)
     split3_mils = db.Column(db.Integer)  
 
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))

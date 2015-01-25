@@ -1,0 +1,9 @@
+Number,ShortName,FullName,KartChoice,Customisations
+0,SMK,Super Mario Kart,0,0
+1,MK64,Mario Kart 64,0,0
+2,MKSC,Mario Kart Super Circuit,0,0
+3,MKDD,Mario Kart Double Dash,1,0
+4,MKDS,Mario Kart DS,1,0
+5,MKWii,Mario Kart Wii,1,0
+6,MK7,Mario Kart 7,0,1
+7,MK8,Mario Kart 8,0,1
