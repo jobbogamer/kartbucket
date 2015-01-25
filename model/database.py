@@ -81,7 +81,24 @@ class Time(db.Model):
 ##### Interaction functions #####
 
 
+def add_object(game):
+    db.session.add(game)
+    commit_changes()
 
+
+def game_already_exists(short_name):
+    game = Game.query.filter_by(short_name=short_name).first()
+    return (game is not None)
+
+
+def track_already_exists(name, game_id):
+    track = Track.query.filter_by(name=name, game_id=game_id).first()
+    return (track is not None)
+
+
+def person_already_exists(name):
+    person = Person.query.filter_by(name=name).first()
+    return (person is not None)
 
 
 ##### High level functions #####
@@ -89,4 +106,8 @@ class Time(db.Model):
 
 def create_tables():
     db.create_all()
+
+
+def commit_changes():
+    db.session.commit()
 
