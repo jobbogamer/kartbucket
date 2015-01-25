@@ -1,201 +1,201 @@
 Number,Name,GameID
-0,Mario Circuit 1,0
-1,Donut Plains 1,0
-2,Ghost Valley 1,0
-3,Bowser Castle 1,0
-4,Mario Circuit 2,0
-5,Choco Island 1,0
-6,Ghost Valley 2,0
-7,Donut Plains 2,0
-8,Bowser Castle 2,0
-9,Mario Circuit 3,0
-10,Koopa Beach 1,0
-11,Choco Island 2,0
-12,Vanilla Lake 1,0
-13,Bowser Castle 3,0
-14,Mario Circuit 4,0
-15,Donut Plains 3,0
-16,Koopa Beach 2,0
-17,Ghost Valley 3,0
-18,Vanilla Lake 2,0
-19,Rainbow Road,0
-20,Luigi Raceway,1
-21,Moo Moo Farm,1
-22,Koopa Troopa Beach,1
-23,Kalimari Desert,1
-24,Toad's Turnpike,1
-25,Frappe Snowland,1
-26,Choco Mountain,1
-27,Mario Raceway,1
-28,Wario Stadium,1
-29,Sherbet Land,1
-30,Royal Raceway,1
-31,Bowser's Castle,1
-32,DK's Jungle Parkway,1
-33,Yoshi Valley,1
-34,Banshee Boardwalk,1
-35,Rainbow Road,1
-36,Peach Circuit,2
-37,Shy Guy Beach,2
-38,Riverside Park,2
-39,Bowser Castle 1,2
-40,Mario Circuit,2
-41,Boo Lake,2
-42,Cheese Land,2
-43,Bowser Castle 2,2
-44,Luigi Circuit,2
-45,Sky Garden,2
-46,Cheep Cheep Island,2
-47,Sunset Wilds,2
-48,Snow Land,2
-49,Ribbon Road,2
-50,Yoshi Desert,2
-51,Bowser Castle 3,2
-52,Lakeside Park,2
-53,Broken Pier,2
-54,Bowser Castle 4,2
-55,Rainbow Road,2
-56,Luigi Circuit,3
-57,Peach Beach,3
-58,Baby Park,3
-59,Dry Dry Desert,3
-60,Mushroom Bridge,3
-61,Mario Circuit,3
-62,Daisy Cruiser,3
-63,Waluigi Stadium,3
-64,Sherbet Land,3
-65,Mushroom City,3
-66,Yoshi Circuit,3
-67,DK Mountain,3
-68,Wario Colosseum,3
-69,Dino Dino Jungle,3
-70,Bowser's Castle,3
-71,Rainbow Road,3
-72,Figure-8 Circuit,4
-73,Yoshi Falls,4
-74,Cheep Cheep Beach,4
-75,Luigi's Mansion,4
-76,Desert Hills,4
-77,Delfino Square,4
-78,Waluigi Pinball,4
-79,Shroom Ridge,4
-80,DK Pass,4
-81,Tick Tock Clock,4
-82,Mario Circuit,4
-83,Airship Fortress,4
-84,Wario Stadium,4
-85,Peach Gardens,4
-86,Bowser's Castle,4
-87,Rainbow Road,4
-88,SNES Mario Circuit 1,4
-89,N64 Moo Moo Farm,4
-90,GBA Peach Circuit,4
-91,GCN Luigi Circuit,4
-92,SNES Donut Plains 1,4
-93,N64 Frappe Snowland,4
-94,GBA Bowser Castle 2,4
-95,GCN Baby Park,4
-96,SNES Koopa Beach 2,4
-97,N64 Choco Mountain,4
-98,GBA Luigi Circuit,4
-99,GCN Mushroom Bridge,4
-100,SNES Choco Island 2,4
-101,N64 Banshee Boardwalk,4
-102,GBA Sky Garden,4
-103,GCN Yoshi Circuit,4
-104,Luigi Circuit,5
-105,Moo Moo Meadows,5
-106,Mushroom Gorge,5
-107,Toad's Factory,5
-108,Mario Circuit,5
-109,Coconut Mall,5
-110,DK's Snowboard Pass,5
-111,Wario's Gold Mine,5
-112,Daisy Circuit,5
-113,Koopa Cape,5
-114,Maple Treeway,5
-115,Grumble Volcano,5
-116,Dry Dry Ruins,5
-117,Moonview Highway,5
-118,Bowser's Castle,5
-119,Rainbow Road,5
-120,GCN Peach Beach,5
-121,DS Yoshi Falls,5
-122,SNES Ghost Valley 2,5
-123,N64 Mario Raceway,5
-124,N64 Sherbet Land,5
-125,GBA Shy Guy Beach,5
-126,DS Delfino Square,5
-127,GCN Waluigi Stadium,5
-128,DS Desert Hills,5
-129,GBA Bowser Castle 3,5
-130,N64 DK's Jungle Parkway,5
-131,GCN Mario Circuit,5
-132,SNES Mario Circuit 3,5
-133,DS Peach Gardens,5
-134,GCN DK Mountain,5
-135,N64 Bowser's Castle,5
-136,Toad Circuit,6
-137,Daisy Hills,6
-138,Cheep Cheep Cape,6
-139,Shy Guy Bazaar,6
-140,Wuhu Island Loop,6
-141,Mario Circuit,6
-142,Melody Motorway,6
-143,Alpine Pass,6
-144,Piranha Plant Pipeway,6
-145,Wario's Galleon,6
-146,Koopa City,6
-147,Wuhu Mountain Loop,6
-148,DK Jungle,6
-149,Rosalina's Ice World,6
-150,Bowser's Castle,6
-151,Rainbow Road,6
-152,N64 Luigi Raceway,6
-153,GBA Bowser Castle 1,6
-154,Wii Mushroom Gorge,6
-155,DS Luigi's Mansion,6
-156,N64 Koopa Troopa Beach,6
-157,SNES Mario Circuit 2,6
-158,Wii Coconut Mall,6
-159,DS Waluigi Pinball,6
-160,N64 Kalimari Desert,6
-161,DS DK Pass,6
-162,GCN Daisy Cruiser,6
-163,Wii Maple Treeway,6
-164,Wii Koopa Cape,6
-165,GCN Dino Dino Jungle,6
-166,DS Airship Fortress,6
-167,SNES Rainbow Road,6
-168,Mario Kart Stadium,7
-169,Water Park,7
-170,Sweet Sweet Canyon,7
-171,Thwomp Ruins,7
-172,Mario Circuit,7
-173,Toad Harbour,7
-174,Twisted Mansion,7
-175,Shy Guy Falls,7
-176,Sunshine Airport,7
-177,Electrodome,7
-178,Dolphin Shoals,7
-179,Mount Wario,7
-180,Cloudtop Cruise,7
-181,Bone Dry Dunes,7
-182,Bowser's Castle,7
-183,Rainbow Road,7
-184,Wii Moo Moo Meadows,7
-185,GBA Mario Circuit,7
-186,DS Cheep Cheep Beach,7
-187,N64 Toad's Turnpike,7
-188,GCN Dry Dry Desert,7
-189,SNES Donut Plains 3,7
-190,N64 Royal Raceway,7
-191,3DS DK Jungle,7
-192,DS Wario Stadium,7
-193,GCN Sherbet Land,7
-194,3DS Music Park,7
-195,N64 Yoshi Valley,7
-196,DS Tick Tock Clock,7
-197,3DS Piranha Plant Slide,7
-198,Wii Grumble Volcano,7
-199,N64 Rainbow Road,7
+1,Mario Circuit 1,1
+2,Donut Plains 1,1
+3,Ghost Valley 1,1
+4,Bowser Castle 1,1
+5,Mario Circuit 2,1
+6,Choco Island 1,1
+7,Ghost Valley 2,1
+8,Donut Plains 2,1
+9,Bowser Castle 2,1
+10,Mario Circuit 3,1
+11,Koopa Beach 1,1
+12,Choco Island 2,1
+13,Vanilla Lake 1,1
+14,Bowser Castle 3,1
+15,Mario Circuit 4,1
+16,Donut Plains 3,1
+17,Koopa Beach 2,1
+18,Ghost Valley 3,1
+19,Vanilla Lake 2,1
+20,Rainbow Road,1
+21,Luigi Raceway,2
+22,Moo Moo Farm,2
+23,Koopa Troopa Beach,2
+24,Kalimari Desert,2
+25,Toad's Turnpike,2
+26,Frappe Snowland,2
+27,Choco Mountain,2
+28,Mario Raceway,2
+29,Wario Stadium,2
+30,Sherbet Land,2
+31,Royal Raceway,2
+32,Bowser's Castle,2
+33,DK's Jungle Parkway,2
+34,Yoshi Valley,2
+35,Banshee Boardwalk,2
+36,Rainbow Road,2
+37,Peach Circuit,3
+38,Shy Guy Beach,3
+39,Riverside Park,3
+40,Bowser Castle 1,3
+41,Mario Circuit,3
+42,Boo Lake,3
+43,Cheese Land,3
+44,Bowser Castle 2,3
+45,Luigi Circuit,3
+46,Sky Garden,3
+47,Cheep Cheep Island,3
+48,Sunset Wilds,3
+49,Snow Land,3
+50,Ribbon Road,3
+51,Yoshi Desert,3
+52,Bowser Castle 3,3
+53,Lakeside Park,3
+54,Broken Pier,3
+55,Bowser Castle 4,3
+56,Rainbow Road,3
+57,Luigi Circuit,4
+58,Peach Beach,4
+59,Baby Park,4
+60,Dry Dry Desert,4
+61,Mushroom Bridge,4
+62,Mario Circuit,4
+63,Daisy Cruiser,4
+64,Waluigi Stadium,4
+65,Sherbet Land,4
+66,Mushroom City,4
+67,Yoshi Circuit,4
+68,DK Mountain,4
+69,Wario Colosseum,4
+70,Dino Dino Jungle,4
+71,Bowser's Castle,4
+72,Rainbow Road,4
+73,Figure-8 Circuit,5
+74,Yoshi Falls,5
+75,Cheep Cheep Beach,5
+76,Luigi's Mansion,5
+77,Desert Hills,5
+78,Delfino Square,5
+79,Waluigi Pinball,5
+80,Shroom Ridge,5
+81,DK Pass,5
+82,Tick Tock Clock,5
+83,Mario Circuit,5
+84,Airship Fortress,5
+85,Wario Stadium,5
+86,Peach Gardens,5
+87,Bowser's Castle,5
+88,Rainbow Road,5
+89,SNES Mario Circuit 1,5
+90,N64 Moo Moo Farm,5
+91,GBA Peach Circuit,5
+92,GCN Luigi Circuit,5
+93,SNES Donut Plains 1,5
+94,N64 Frappe Snowland,5
+95,GBA Bowser Castle 2,5
+96,GCN Baby Park,5
+97,SNES Koopa Beach 2,5
+98,N64 Choco Mountain,5
+99,GBA Luigi Circuit,5
+100,GCN Mushroom Bridge,5
+101,SNES Choco Island 2,5
+102,N64 Banshee Boardwalk,5
+103,GBA Sky Garden,5
+104,GCN Yoshi Circuit,5
+105,Luigi Circuit,6
+106,Moo Moo Meadows,6
+107,Mushroom Gorge,6
+108,Toad's Factory,6
+109,Mario Circuit,6
+110,Coconut Mall,6
+111,DK's Snowboard Pass,6
+112,Wario's Gold Mine,6
+113,Daisy Circuit,6
+114,Koopa Cape,6
+115,Maple Treeway,6
+116,Grumble Volcano,6
+117,Dry Dry Ruins,6
+118,Moonview Highway,6
+119,Bowser's Castle,6
+120,Rainbow Road,6
+121,GCN Peach Beach,6
+122,DS Yoshi Falls,6
+123,SNES Ghost Valley 2,6
+124,N64 Mario Raceway,6
+125,N64 Sherbet Land,6
+126,GBA Shy Guy Beach,6
+127,DS Delfino Square,6
+128,GCN Waluigi Stadium,6
+129,DS Desert Hills,6
+130,GBA Bowser Castle 3,6
+131,N64 DK's Jungle Parkway,6
+132,GCN Mario Circuit,6
+133,SNES Mario Circuit 3,6
+134,DS Peach Gardens,6
+135,GCN DK Mountain,6
+136,N64 Bowser's Castle,6
+137,Toad Circuit,7
+138,Daisy Hills,7
+139,Cheep Cheep Cape,7
+140,Shy Guy Bazaar,7
+141,Wuhu Island Loop,7
+142,Mario Circuit,7
+143,Melody Motorway,7
+144,Alpine Pass,7
+145,Piranha Plant Pipeway,7
+146,Wario's Galleon,7
+147,Koopa City,7
+148,Wuhu Mountain Loop,7
+149,DK Jungle,7
+150,Rosalina's Ice World,7
+151,Bowser's Castle,7
+152,Rainbow Road,7
+153,N64 Luigi Raceway,7
+154,GBA Bowser Castle 1,7
+155,Wii Mushroom Gorge,7
+156,DS Luigi's Mansion,7
+157,N64 Koopa Troopa Beach,7
+158,SNES Mario Circuit 2,7
+159,Wii Coconut Mall,7
+160,DS Waluigi Pinball,7
+161,N64 Kalimari Desert,7
+162,DS DK Pass,7
+163,GCN Daisy Cruiser,7
+164,Wii Maple Treeway,7
+165,Wii Koopa Cape,7
+166,GCN Dino Dino Jungle,7
+167,DS Airship Fortress,7
+168,SNES Rainbow Road,7
+169,Mario Kart Stadium,8
+170,Water Park,8
+171,Sweet Sweet Canyon,8
+172,Thwomp Ruins,8
+173,Mario Circuit,8
+174,Toad Harbour,8
+175,Twisted Mansion,8
+176,Shy Guy Falls,8
+177,Sunshine Airport,8
+178,Electrodome,8
+179,Dolphin Shoals,8
+180,Mount Wario,8
+181,Cloudtop Cruise,8
+182,Bone Dry Dunes,8
+183,Bowser's Castle,8
+184,Rainbow Road,8
+185,Wii Moo Moo Meadows,8
+186,GBA Mario Circuit,8
+187,DS Cheep Cheep Beach,8
+188,N64 Toad's Turnpike,8
+189,GCN Dry Dry Desert,8
+190,SNES Donut Plains 3,8
+191,N64 Royal Raceway,8
+192,3DS DK Jungle,8
+193,DS Wario Stadium,8
+194,GCN Sherbet Land,8
+195,3DS Music Park,8
+196,N64 Yoshi Valley,8
+197,DS Tick Tock Clock,8
+198,3DS Piranha Plant Slide,8
+199,Wii Grumble Volcano,8
+200,N64 Rainbow Road,8
