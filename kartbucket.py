@@ -19,12 +19,12 @@ except KeyError as error:
 
 database.db.init_app(app)
 
+options = {}
+
 # Horrible flask-ness to allow access to the database from outside of
 # a route
 with app.app_context():
-    options = {
-        'pages': utils.get_page_list()
-    }
+    options['pages'] = utils.get_page_list()
 
 
 ##### Pages #####
@@ -38,8 +38,10 @@ def index():
 
 @app.route('/game/<game_name>/')
 def game_name(game_name):
-    game = database.get_game_by_short_name(game_name)
-    return game.full_name
+    options['active_page'] = game_name
+    options['game'] = database.get_game_by_short_name(game_name)
+    print options
+    return render_template('game.html', options=options)
 
 
 @app.route('/game/<int:game_id>/')
