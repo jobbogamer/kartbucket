@@ -32,18 +32,22 @@ with app.app_context():
 
 @app.route('/')
 def index():
-    database.create_tables()
     options['title'] = "Kartbucket"
     options['game'] = database.get(database.Game, database.count(database.Game))
     options['active_page'] = options['game'].short_name
+    
     return redirect(url_for('game_name', game_name=options['game'].short_name))
 
 
 @app.route('/game/<game_name>/')
 def game_name(game_name):
+    game = database.get_game_by_short_name(game_name)
+
     options['active_page'] = game_name
-    options['game'] = database.get_game_by_short_name(game_name)
-    options['title'] = "{} - Kartbucket".format(options['game'].full_name)
+    options['game'] = game
+    options['tracks'] = game.tracks.all()
+    options['title'] = "{} - Kartbucket".format(game.full_name)
+
     return render_template('game.html', options=options)
 
 
@@ -55,6 +59,8 @@ def game_id(game_id):
 
 @app.route('/setup/')
 def setup():
+    database.create_tables()
+
     with open('static/games.csv') as f:
         current_row = 0
         reader = csv.reader(f)
