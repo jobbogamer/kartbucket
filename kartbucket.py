@@ -35,7 +35,7 @@ def index():
     database.create_tables()
     options['title'] = "Kartbucket"
     options['game'] = database.get(database.Game, database.count(database.Game))
-    options['active_page'] = optionsp['game'].short_name
+    options['active_page'] = options['game'].short_name
     return redirect(url_for('game_name', game_name=options['game'].short_name))
 
 
