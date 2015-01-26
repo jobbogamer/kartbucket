@@ -1,8 +1,9 @@
 import csv
 import os
 import newrelic.agent
-from flask import Flask, url_for, render_template, request, jsonify
+from flask import Flask, url_for, render_template, request, jsonify, redirect
 from model import database
+from utils import utils
 
 ##### Config #####
 
@@ -18,6 +19,13 @@ except KeyError as error:
 
 database.db.init_app(app)
 
+# Horrible flask-ness to allow access to the database from outside of
+# a route
+with app.app_context():
+    options = {
+        'pages': utils.get_page_list()
+    }
+
 
 ##### Pages #####
 
@@ -25,15 +33,19 @@ database.db.init_app(app)
 @app.route('/')
 def index():
     database.create_tables()
-
-    games = database.get_all(database.Game)
-    pages = [game.short_name for game in games[::-1]]
-
-    options = {
-        'pages': pages
-    }
-
     return render_template('index.html', options=options)
+
+
+@app.route('/game/<game_name>/')
+def game_name(game_name):
+    game = database.get_game_by_short_name(game_name)
+    return game.full_name
+
+
+@app.route('/game/<int:game_id>/')
+def game_id(game_id):
+    game = database.get(database.Game, game_id)
+    return redirect(url_for('game_name', game_name=game.short_name))
 
 
 @app.route('/setup/')
