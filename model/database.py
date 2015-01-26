@@ -95,6 +95,11 @@ def game_already_exists(short_name):
     return (game is not None)
 
 
+def get_all(_class):
+    objects = _class.query.all()
+    return objects
+
+
 def track_already_exists(name, game_id):
     track = Track.query.filter_by(name=name, game_id=game_id).first()
     return (track is not None)

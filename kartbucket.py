@@ -25,7 +25,15 @@ database.db.init_app(app)
 @app.route('/')
 def index():
     database.create_tables()
-    return "Hello, world!"
+
+    games = database.get_all(database.Game)
+    pages = [game.short_name for game in games[::-1]]
+
+    options = {
+        'pages': pages
+    }
+
+    return render_template('index.html', options=options)
 
 
 @app.route('/setup')
