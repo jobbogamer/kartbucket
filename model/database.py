@@ -12,6 +12,7 @@ class Game(db.Model):
     full_name = db.Column(db.String)
     choice_of_kart = db.Column(db.Boolean)
     allows_customisation = db.Column(db.Boolean)
+    cup_length = db.Column(db.Integer)
 
 
 class Track(db.Model):

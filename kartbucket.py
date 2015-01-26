@@ -35,7 +35,7 @@ def index():
     options['title'] = "Kartbucket"
     options['game'] = database.get(database.Game, database.count(database.Game))
     options['active_page'] = options['game'].short_name
-    
+
     return redirect(url_for('game_name', game_name=options['game'].short_name))
 
 
@@ -47,6 +47,7 @@ def game_name(game_name):
     options['game'] = game
     options['tracks'] = game.tracks.all()
     options['title'] = "{} - Kartbucket".format(game.full_name)
+    options['cups'] = len(options['tracks']) / game.cup_length
 
     return render_template('game.html', options=options)
 
@@ -71,6 +72,7 @@ def setup():
                 game.full_name = row[2]
                 game.choice_of_kart = (row[3] == '1')
                 game.allows_customisation = (row[4] == '1')
+                game.cup_length = int(row[5])
 
                 if not database.game_already_exists(game.short_name):
                     database.add_object(game)

@@ -2,15 +2,17 @@
 {% block content %}
 
 <div class="container-fluid">
+    {% for cup in range(options['cups']) %}
     <div class="row">
-        {% for track in options['tracks'] %}
+        {% for i in range(options['game'].cup_length * cup, options['game'].cup_length * cup + options['game'].cup_length) %}
         <div class="col-xs-12 col-sm-6 col-md-3">
-            <div id="track" class="">
-            {{ track.name }}
+            <div id="" class="track">
+            {{ options['tracks'][i].name }}
             </div>  
         </div>
         {% endfor %}
     </div>
+    {% endfor %}
 </div>
 
 {% endblock %}
