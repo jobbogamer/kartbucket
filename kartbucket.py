@@ -36,7 +36,7 @@ def index():
     return render_template('index.html', options=options)
 
 
-@app.route('/setup')
+@app.route('/setup/')
 def setup():
     with open('static/games.csv') as f:
         current_row = 0
