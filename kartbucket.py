@@ -24,7 +24,7 @@ options = {}
 # Horrible flask-ness to allow access to the database from outside of
 # a route
 with app.app_context():
-    options['pages'] = utils.get_page_list()
+    options['all_games'] = database.get_all(database.Game)[::-1]
 
 
 ##### Pages #####
@@ -33,6 +33,7 @@ with app.app_context():
 @app.route('/')
 def index():
     database.create_tables()
+    print options
     return render_template('index.html', options=options)
 
 

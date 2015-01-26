@@ -12,9 +12,3 @@ def splits_match_total(total_mins,  total_secs,  total_mils,
     split3 = split3_mils + (split3_secs * 1000) + (split3_mins * 60 * 1000)
 
     return (total == (split1 + split2 + split3))
-
-
-def get_page_list():
-    games = database.get_all(database.Game)
-    pages = [game.short_name for game in games[::-1]]
-    return pages
