@@ -33,7 +33,7 @@ with app.app_context():
 @app.route('/')
 def index():
     database.create_tables()
-    print options
+    options['title'] = "Kartbucket"
     return render_template('index.html', options=options)
 
 
@@ -41,7 +41,7 @@ def index():
 def game_name(game_name):
     options['active_page'] = game_name
     options['game'] = database.get_game_by_short_name(game_name)
-    print options
+    options['title'] = "{} - Kartbucket".format(options['game'].full_name)
     return render_template('game.html', options=options)
 
 
