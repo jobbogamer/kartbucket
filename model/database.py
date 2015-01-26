@@ -90,6 +90,11 @@ def add_object(game):
     commit_changes()
 
 
+def count(_class):
+    objects = _class.query.all()
+    return len(objects)
+
+
 def game_already_exists(short_name):
     game = Game.query.filter_by(short_name=short_name).first()
     return (game is not None)

@@ -34,7 +34,9 @@ with app.app_context():
 def index():
     database.create_tables()
     options['title'] = "Kartbucket"
-    return render_template('index.html', options=options)
+    options['game'] = database.get(database.Game, database.count(database.Game))
+    options['active_page'] = optionsp['game'].short_name
+    return redirect(url_for('game_name', game_name=options['game'].short_name))
 
 
 @app.route('/game/<game_name>/')
