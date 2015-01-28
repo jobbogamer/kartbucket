@@ -45,7 +45,7 @@ def game_name(game_name):
 
     options['active_page'] = game_name
     options['game'] = game
-    options['tracks'] = game.tracks.all()
+    options['tracks'] = sorted(game.tracks.all(), key=lambda track: track.id)
     options['title'] = "{} - Kartbucket".format(game.full_name)
     options['cups'] = len(options['tracks']) / game.cup_length
 

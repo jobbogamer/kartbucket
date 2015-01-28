@@ -108,6 +108,7 @@ def get(_class, obj_id):
 
 def get_all(_class):
     objects = _class.query.all()
+    objects = sorted(objects, key=lambda obj: obj.id)
     return objects
 
 
