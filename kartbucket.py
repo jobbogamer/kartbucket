@@ -24,8 +24,12 @@ options = {}
 # Horrible flask-ness to allow access to the database from outside of
 # a route
 with app.app_context():
-    options['all_games'] = database.get_all(database.Game)[::-1]
-
+    try:
+        options['all_games'] = database.get_all(database.Game)[::-1]
+    except Exception as error:
+        database.create_tables()
+        options['all_games'] = database.get_all(database.Game)[::-1]
+        
 
 ##### Pages #####
 
