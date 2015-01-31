@@ -35,5 +35,35 @@ function prepareEditModal(trackID, trackName, personID, personName, character, k
 
 function submitTime()
 {
+    var time = $("#edit-modal-character-field").val();
+    var split1 = $("#edit-modal-character-field").val();
+    var split2 = $("#edit-modal-character-field").val();
+    var split3 = $("#edit-modal-character-field").val();
 
+    var character = $("#edit-modal-character-field").val();
+    var kart = $("#edit-modal-kart-field").val();
+    var wheels = $("#edit-modal-wheels-field").val();
+    var glider = $("#edit-modal-glider-field").val();
+
+    $.ajax({
+        url: '/api/submit',
+        data: {
+            'track' : newTrackID,
+            'person': newPersonID,
+            'time': time,
+            'split1': split1,
+            'split2': split2,
+            'split3': split3,
+            'character': character,
+            'kart': kart,
+            'wheels': wheels,
+            'glider': glider
+        }
+    }).done(function(result) {
+        if (result['success']) {
+            
+        } else {
+
+        }
+    });
 }
