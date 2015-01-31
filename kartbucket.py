@@ -45,9 +45,11 @@ def game_name(game_name):
 
     options['active_page'] = game_name
     options['game'] = game
-    options['tracks'] = sorted(game.tracks.all(), key=lambda track: track.id)
     options['title'] = "{} - Kartbucket".format(game.full_name)
+
+    options['tracks'] = sorted(game.tracks.all(), key=lambda track: track.id)
     options['cups'] = len(options['tracks']) / game.cup_length
+    options['people'] = database.get_all(database.Person)
 
     return render_template('game.html', options=options)
 

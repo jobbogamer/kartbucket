@@ -2,17 +2,50 @@
 {% block content %}
 
 <div class="container-fluid">
-    {% for cup in range(options['cups']) %}
     <div class="row">
-        {% for i in range(options['game'].cup_length * cup, options['game'].cup_length * cup + options['game'].cup_length) %}
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div id="" class="track">
-            {{ options['tracks'][i].name }}
-            </div>  
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="person-name" rowspan="2"></th>
+                            {% for person in options['people'] %}
+                            <th class="person-name" colspan="5">{{ person.name }}</th>
+                            {% endfor %}
+                        </tr>
+                        <tr>
+                            {% for person in options['people'] %}
+                            <th>Time</th>
+                            <th>Character</th>
+                            <th>Kart Body</th>
+                            <th>Wheels</th>
+                            <th>Glider</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cup in options['tracks'] | batch(options['game'].cup_length) %}
+                        {% for track in cup %}
+                        <tr>
+                            <td>{{ track.name }}</td>
+                            {% for person in options['people'] %}
+                            <td>--:--.---</td>
+                            <td>Mario</td>
+                            <td>Soda Jet</td>
+                            <td>Mushroom</td>
+                            <td>Parafoil</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td class="cup-separator" colspan="50"></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
-        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 
 {% endblock %}

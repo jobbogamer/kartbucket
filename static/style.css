@@ -34,8 +34,10 @@ a:hover {
 .row {
 	margin-right: -10px;
 	margin-left: -10px;
+	/*
 	padding: 32px 0;
 	border-bottom: 1px solid #ccc;
+	*/
 }
 
 .btn-primary {
@@ -119,6 +121,22 @@ a:hover {
 
 .navbar-nav li {
 	text-align: center;
+}
+
+div.table-responsive {
+	background: #ffffff;
+}
+
+th.person-name {
+	text-align: center;
+}
+
+td.cup-separator {
+	background-color: #e4e4e4;
+}
+
+td.cup-separator:hover {
+	background-color: #e4e4e4 !important;
 }
 
 div.track {
