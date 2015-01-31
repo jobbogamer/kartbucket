@@ -22,23 +22,23 @@
         {% block content %}{% endblock %}
         </div>
 
-        <div id="add-modal" class="modal fade">
+        <div id="edit-modal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Add Time</h4>
                     </div>
                     <div class="modal-body">
-                        <div id="add-modal-error-message" class="alert alert-danger">
-                            <h4 id="add-modal-error-title">Something went wrong.</h4>
-                            <p id="add-modal-error-content">That link couldn't be added; try again later. <a id="add-modal-error-popover" data-toggle="popover" data-content="">What was the error?</a></p>
+                        <div id="edit-modal-error-message" class="alert alert-danger">
+                            <h4 id="edit-modal-error-title">Something went wrong.</h4>
+                            <p id="edit-modal-error-content">That link couldn't be added; try again later. <a id="edit-modal-error-popover" data-toggle="popover" data-content="">What was the error?</a></p>
                         </div>
 
                         <form class="form-horizontal">
                             <div class="form-group">
-                                <label for="add-modal-person-field" class="col-xs-2 control-label">Person</label>
+                                <label for="edit-modal-person-field" class="col-xs-2 control-label">Person</label>
                                 <div class="col-xs-10">
-                                    <select id="add-modal-person-field" class="form-control">
+                                    <select id="edit-modal-person-field" class="form-control">
                                         {% for person in options['all_people'] %}
                                         <option value="{{ person.id }}">{{ person.name }}</option>
                                         {% endfor %}
@@ -46,17 +46,51 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="add-modal-track-field" class="col-xs-2 control-label">Track</label>
+                                <label for="edit-modal-time-field" class="col-xs-2 control-label">Time</label>
                                 <div class="col-xs-10">
-                                    <select id="add-modal-game-field" class="form-control">
-                                        {% if options['game'] %}
-                                        {% for track in options['tracks'] %}
-                                        <option value="{{ track.id }}">{{ track.name }}</option>
-                                        {% endfor %}
-                                        {% else %}
-                                        <option value="-1">Select a game first...</option>
-                                        {% endif %}
-                                    </select>
+                                    <input id="edit-modal-time-field" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-modal-split1-field" class="col-xs-2 control-label">Split 1</label>
+                                <div class="col-xs-10">
+                                    <input id="edit-modal-split1-field" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-modal-split2-field" class="col-xs-2 control-label">Split 2</label>
+                                <div class="col-xs-10">
+                                    <input id="edit-modal-split2-field" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-modal-split3-field" class="col-xs-2 control-label">Split 3</label>
+                                <div class="col-xs-10">
+                                    <input id="edit-modal-split3-field" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-modal-character-field" class="col-xs-2 control-label">Character</label>
+                                <div class="col-xs-10">
+                                    <input id="edit-modal-character-field" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-modal-kart-field" class="col-xs-2 control-label">Kart</label>
+                                <div class="col-xs-10">
+                                    <input id="edit-modal-kart-field" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-modal-wheels-field" class="col-xs-2 control-label">Wheels</label>
+                                <div class="col-xs-10">
+                                    <input id="edit-modal-wheels-field" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-modal-glider-field" class="col-xs-2 control-label">Glider</label>
+                                <div class="col-xs-10">
+                                    <input id="edit-modal-glider-field" type="text" class="form-control" />
                                 </div>
                             </div>
                         </form>
@@ -65,8 +99,8 @@
                             <input id="add-modal-title-field" type="text" class="form-control" placeholder="Title (optional)" autocomplete="off" /><!-->
                     </div>
                     <div class="modal-footer">
-                        <button id="add-modal-cancel-button" type="button" class="btn btn-default" data-dismiss="modal" onclick="hideAddError();">Cancel</button>
-                        <button id="add-modal-add-button" type="button" class="btn btn-primary" onclick="addLinkFromModal();">Add</button>
+                        <button id="edit-modal-cancel-button" type="button" class="btn btn-default" data-dismiss="modal" onclick="hideAddError();">Cancel</button>
+                        <button id="edit-modal-add-button" type="button" class="btn btn-primary" onclick="addLinkFromModal();">Add</button>
                     </div>
                 </div>
             </div>

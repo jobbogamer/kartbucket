@@ -164,15 +164,11 @@ a.edit-button {
 	display: none;
 }
 
-input#add-modal-url-field {
-	margin-bottom: 20px;
-}
-
-div#add-modal-error-message {
+div#edit-modal-error-message {
 	display: none;
 }
 
-a#add-modal-error-popover {
+a#edit-modal-error-popover {
 	cursor: pointer;
 }
 
