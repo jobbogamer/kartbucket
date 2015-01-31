@@ -29,7 +29,7 @@ with app.app_context():
     except Exception as error:
         database.create_tables()
         options['all_games'] = database.get_all(database.Game)[::-1]
-        
+
 
 ##### Pages #####
 
@@ -54,6 +54,8 @@ def game_name(game_name):
     options['tracks'] = sorted(game.tracks.all(), key=lambda track: track.id)
     options['cups'] = len(options['tracks']) / game.cup_length
     options['people'] = database.get_all(database.Person)
+
+    options['times'] = utils.build_times_structure(game.id)
 
     return render_template('game.html', options=options)
 
