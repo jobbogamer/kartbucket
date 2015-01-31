@@ -26,9 +26,11 @@ options = {}
 with app.app_context():
     try:
         options['all_games'] = database.get_all(database.Game)[::-1]
+        options['all_people'] = database.get_all(database.Person)
     except Exception as error:
         database.create_tables()
         options['all_games'] = database.get_all(database.Game)[::-1]
+        options['all_people'] = database.get_all(database.Person)
 
 
 ##### Pages #####

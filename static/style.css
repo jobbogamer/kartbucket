@@ -155,133 +155,13 @@ div.track {
 	border: 1px solid #cccccc;
 }
 
-div.link * {
-	margin: 0;
-	padding: 0;
+td.track-name:hover a.edit-button {
+	display: inline;
 }
 
-div.link a {
-	color: #000000;
-	cursor: pointer;
-}
-
-div.link a:hover {
-	color: #00bd83;
-	text-decoration: none;
-}
-
-body.compact div.link, body.page-1 div.link {
-	height: 78px;
-}
-
-div.link p.title {
-	height: 48px;
-	overflow: hidden;
-
-	padding: 4px 6px;
-
-	font-size: 16px;
-}
-
-div.link span.thumbnail {
-	width: 100%;
-	height: 160px;
-
-	margin: 0;
-
-	display: block;
-	float: left;
-	clear: both;
-
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: 100% auto;
-
-	border-right: none;
-	border-left: none;
-	border-radius: 0;
-}
-
-body.compact div.link span.thumbnail {
-	display: none;
-}
-
-div.link span.thumbnail.screenshot {
-	background-position: 0 0;
-}
-
-div.link div.meta {
-	width: 100%;
-	overflow: auto;
-
-	padding: 4px 6px;
-
-	float: left;
-}
-
-div.link i.indicator {
-	padding: 3px 4px 3px 0;
-
-	float: left;
-
-	color: #999999;
-	cursor: default;
-}
-
-div.link i.unread-indicator {
-	padding-top: 5px;
-	font-size: 11px;
-}
-
-div.link.unread i.indicator {
-	color: #107bf7;
-}
-
-div.link.starred i.indicator {
-	color: #fd9945;
-}
-
-div.link.archived p.title {
-	color: #999999;
-	font-style: italic;
-}
-
-div.link p.domain {
-	float: left;
-
-	color: #999999;
-}
-
-div.link p.duration {
-	float: left;
-	color: #999999;
-}
-
-div.link time {
+a.edit-button {
 	float: right;
-
-	color: #999999;
-}
-
-div.link:hover time {
 	display: none;
-}
-
-div.link div.buttons {
-	display: none;
-	float: right;
-}
-
-div.link:hover div.buttons {
-	display: block;
-}
-
-div.link div.buttons i.button {
-	color: #999999;
-}
-
-div.link div.buttons i.button:hover {
-	color: #00bd83;
 }
 
 input#add-modal-url-field {

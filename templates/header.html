@@ -20,19 +20,6 @@
                 <li class="hidden-xs {% if options['active_page'] == game.short_name %}active{% endif %}"><a href="/game/{{ game.short_name }}">{{ game.short_name }}</a></li>
                 {% endfor %}
             </ul>
-
-            <ul class="nav navbar-nav navbar-right hidden-xs">
-                <li>
-                    <button id="add-link"
-                            type="button"
-                            class="btn btn-default navbar-btn"
-                            data-toggle="modal"
-                            data-target="#add-modal"
-                            title="Add Link">
-                        <span class="fa fa-plus fa-fw"></span>
-                    </button>
-                </li>
-            </ul>
         </div>
     </div>
 </nav>

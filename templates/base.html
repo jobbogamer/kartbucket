@@ -22,6 +22,56 @@
         {% block content %}{% endblock %}
         </div>
 
+        <div id="add-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Time</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="add-modal-error-message" class="alert alert-danger">
+                            <h4 id="add-modal-error-title">Something went wrong.</h4>
+                            <p id="add-modal-error-content">That link couldn't be added; try again later. <a id="add-modal-error-popover" data-toggle="popover" data-content="">What was the error?</a></p>
+                        </div>
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="add-modal-person-field" class="col-xs-2 control-label">Person</label>
+                                <div class="col-xs-10">
+                                    <select id="add-modal-person-field" class="form-control">
+                                        {% for person in options['all_people'] %}
+                                        <option value="{{ person.id }}">{{ person.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="add-modal-track-field" class="col-xs-2 control-label">Track</label>
+                                <div class="col-xs-10">
+                                    <select id="add-modal-game-field" class="form-control">
+                                        {% if options['game'] %}
+                                        {% for track in options['tracks'] %}
+                                        <option value="{{ track.id }}">{{ track.name }}</option>
+                                        {% endfor %}
+                                        {% else %}
+                                        <option value="-1">Select a game first...</option>
+                                        {% endif %}
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+
+                            <!--<input id="add-modal-game-field" type="text" class="form-control" placeholder="URL" autocomplete="off" />
+                            <input id="add-modal-title-field" type="text" class="form-control" placeholder="Title (optional)" autocomplete="off" /><!-->
+                    </div>
+                    <div class="modal-footer">
+                        <button id="add-modal-cancel-button" type="button" class="btn btn-default" data-dismiss="modal" onclick="hideAddError();">Cancel</button>
+                        <button id="add-modal-add-button" type="button" class="btn btn-primary" onclick="addLinkFromModal();">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     </body>

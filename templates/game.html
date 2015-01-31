@@ -44,7 +44,15 @@
                         {% set track_num = loop.index0 %}
                         {% set track_index = track_num + (cup_num * options['game'].cup_length) %}
                         <tr>
-                            <td>{{ track.name }}</td>
+                            <td class="track-name">{{ track.name }}
+                                <a onclick=";"
+                                   href="#"
+                                   class="edit-button"
+                                   data-toggle="modal"
+                                   data-target="#edit-modal">
+                                    <i class="button fa fa-fw fa-pencil"></i>
+                                </a>
+                            </td>
                             {% for person in options['people'] %}
                             {% set person_num = loop.index0 %}
                             {% set time = options['times'][track_index][person_num] %}
