@@ -155,13 +155,13 @@ div.track {
 	border: 1px solid #cccccc;
 }
 
-td.track-name:hover a.edit-button {
-	display: inline;
+td:hover a.edit-button {
+	visibility: visible;
 }
 
 a.edit-button {
 	float: right;
-	display: none;
+	visibility: hidden;
 }
 
 div#edit-modal-error-message {

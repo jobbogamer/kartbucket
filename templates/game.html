@@ -44,8 +44,15 @@
                         {% set track_num = loop.index0 %}
                         {% set track_index = track_num + (cup_num * options['game'].cup_length) %}
                         <tr>
-                            <td class="track-name">{{ track.name }}
-                                <a onclick=";"
+                            <td class="track-name">{{ track.name }}</td>
+                            {% for person in options['people'] %}
+                            {% set person_num = loop.index0 %}
+                            {% set time = options['times'][track_index][person_num] %}
+                                {% if time %}
+                            <td>{{ options['times'][track_index][person_num] }}
+                                <a onclick="prepareEditModal({{ track.id }}, '{{ track.name }}',
+                                                '{{ options['all_people'][person_num].id }}', '{{ options['all_people'][person_num].name }}',
+                                                '{{ time.character }}', '{{ time.kart_body }}', '{{ time.kart_wheels }}', '{{ time.kart_glider }}');"
                                    href="#"
                                    class="edit-button"
                                    data-toggle="modal"
@@ -53,11 +60,6 @@
                                     <i class="button fa fa-fw fa-pencil"></i>
                                 </a>
                             </td>
-                            {% for person in options['people'] %}
-                            {% set person_num = loop.index0 %}
-                            {% set time = options['times'][track_index][person_num] %}
-                                {% if time %}
-                            <td>{{ options['times'][track_index][person_num] }}</td>
                             <td>Mario</td>
                                     {% if options['game'].allows_customisation or options['game'].choice_of_kart %}
                             <td>Soda Jet</td>
@@ -67,7 +69,17 @@
                             <td>Parafoil</td>
                                     {% endif %}
                                 {% else %}
-                            <td>--:--.---</td>
+                            <td>--:--.---
+                                <a onclick="prepareEditModal({{ track.id }}, '{{ track.name }}',
+                                                '{{ options['all_people'][person_num].id }}', '{{ options['all_people'][person_num].name }}',
+                                                '', '', '', '');"
+                                   href="#"
+                                   class="edit-button"
+                                   data-toggle="modal"
+                                   data-target="#edit-modal">
+                                    <i class="button fa fa-fw fa-pencil"></i>
+                                </a>
+                            </td>
                             <td>---</td>
                                     {% if options['game'].allows_customisation or options['game'].choice_of_kart %}
                             <td>---</td>
