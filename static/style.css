@@ -176,6 +176,10 @@ div#edit-modal .modal-body {
 	padding-bottom: 0;
 }
 
+span#proof-url {
+	display: none;
+}
+
 span#proof-url a {
 	color: #737373;
 }

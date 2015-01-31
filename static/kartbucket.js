@@ -82,7 +82,8 @@ function uploadToImgur(file, form)
     xhr.onload = function() {
         var result = JSON.parse(xhr.responseText).data.link;
         newProofURL = result;
-        $("#proof-url").html('<a href="' + newProofURL + '">' + newProofURL + '</a>');
+        $("#proof-url").html('<a target="_blank" href="' + newProofURL + '">' + newProofURL + '</a>');
+        $("#proof-url").slideDown();
         $("#upload-indicator").html('<i class="fa fa-fw fa-circle"></i>');
         form.value = null;
     }
