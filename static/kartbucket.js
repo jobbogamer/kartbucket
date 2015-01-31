@@ -18,6 +18,8 @@ function prepareEditModal(trackID, trackName, personID, personName, character, k
     $("#edit-modal-wheels-field").val(wheels);
     $("#edit-modal-glider-field").val(glider);
 
+    $("#edit-modal-proof-field").val(null);
+
     if (!allowsCustomisation)
     {
         $("#wheels-field").hide();

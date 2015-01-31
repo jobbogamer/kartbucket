@@ -105,7 +105,7 @@
                             <div class="form-group">
                                 <label for="edit-modal-proof-field" class="col-xs-2 control-label">Proof</label>
                                 <div class="col-xs-10">
-                                    <input id="edit-modal-proof-field" type="file" class="form-control" />
+                                    <input id="edit-modal-proof-field" type="file" class="form-control" onchange="upload(this.files[0], this)" accept="image/*" />
                                 </div>
                             </div>
                         </form>
