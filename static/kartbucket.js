@@ -4,7 +4,7 @@ var newPersonID = -1;
 
 function prepareEditModal(trackID, trackName, personID, personName, character, kart, wheels, glider, choiceOfKart, allowsCustomisation)
 {
-    $("#edit-modal .modal-title").html("Add Time - " + trackName);
+    $("#edit-modal .modal-title").html("Submit Time - " + trackName);
 
     $("#edit-modal-person-field").val(personID);
 
