@@ -39,19 +39,36 @@
                     </thead>
                     <tbody>
                         {% for cup in options['tracks'] | batch(options['game'].cup_length) %}
+                        {% set cup_num = loop.index0 %}
                         {% for track in cup %}
+                        {% set track_num = loop.index0 %}
+                        {% set track_index = track_num + (cup_num * options['game'].cup_length) %}
                         <tr>
                             <td>{{ track.name }}</td>
                             {% for person in options['people'] %}
-                            <td>--:--.---</td>
+                            {% set person_num = loop.index0 %}
+                            {% set time = options['times'][track_index][person_num] %}
+                                {% if time %}
+                            <td>{{ options['times'][track_index][person_num] }}</td>
                             <td>Mario</td>
-                            {% if options['game'].allows_customisation or options['game'].choice_of_kart %}
+                                    {% if options['game'].allows_customisation or options['game'].choice_of_kart %}
                             <td>Soda Jet</td>
-                            {% endif %}
-                            {% if options['game'].allows_customisation %}
+                                    {% endif %}
+                                    {% if options['game'].allows_customisation %}
                             <td>Mushroom</td>
                             <td>Parafoil</td>
-                            {% endif %}
+                                    {% endif %}
+                                {% else %}
+                            <td>--:--.---</td>
+                            <td>---</td>
+                                    {% if options['game'].allows_customisation or options['game'].choice_of_kart %}
+                            <td>---</td>
+                                    {% endif %}
+                                    {% if options['game'].allows_customisation %}
+                            <td>---</td>
+                            <td>---</td>
+                                    {% endif %}
+                                {% endif %}
                             {% endfor %}
                         </tr>
                         {% endfor %}

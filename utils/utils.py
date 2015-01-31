@@ -19,24 +19,23 @@ def build_times_structure(game_id):
     people = database.get_all(database.Person)
     tracks = game.tracks.all()
 
-    struct = {}
+    struct = []
 
     for track in tracks:
         times = []
         stored_times = track.times.all()
-        
-        for person in people:
-            for time in stored_times:
-                found = False
 
+        for person in people:
+            found = False
+            for time in stored_times:
                 if time.person_id == person.id:
                     times.append(time)
                     found = True
                     break
 
-                if not found:
-                    times.append(None)
+            if not found:
+                times.append(None)
 
-        struct[track.name] = times
+        struct.append(times)
 
     return struct
