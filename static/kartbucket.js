@@ -62,7 +62,8 @@ function submitTime()
             'character': character,
             'kart': kart,
             'wheels': wheels,
-            'glider': glider
+            'glider': glider,
+            'proof': newProofURL
         }
     }).done(function(result) {
         if (result['success']) {
