@@ -3,11 +3,17 @@
 
 {% if options['game'].allows_customisation %}
     {% set span = 5 %}
+    {% set customisation = 'true' %}
+    {% set kart = 'true' %}
 {% else %}
     {% if options['game'].choice_of_kart %}
         {% set span = 3 %}
+        {% set customisation = 'false' %}
+        {% set kart = 'true' %}
     {% else %}
         {% set span = 2 %}
+        {% set customisation = 'false' %}
+        {% set kart = 'false' %}
     {% endif %}
 {% endif %}
 
@@ -52,7 +58,8 @@
                             <td>{{ options['times'][track_index][person_num] }}
                                 <a onclick="prepareEditModal({{ track.id }}, '{{ track.name }}',
                                                 '{{ options['all_people'][person_num].id }}', '{{ options['all_people'][person_num].name }}',
-                                                '{{ time.character }}', '{{ time.kart_body }}', '{{ time.kart_wheels }}', '{{ time.kart_glider }}');"
+                                                '{{ time.character }}', '{{ time.kart_body }}', '{{ time.kart_wheels }}', '{{ time.kart_glider }}',
+                                                {{ kart }}, {{ customisation }});"
                                    href="#"
                                    class="edit-button"
                                    data-toggle="modal"
@@ -72,7 +79,8 @@
                             <td>--:--.---
                                 <a onclick="prepareEditModal({{ track.id }}, '{{ track.name }}',
                                                 '{{ options['all_people'][person_num].id }}', '{{ options['all_people'][person_num].name }}',
-                                                '', '', '', '');"
+                                                '', '', '', '',
+                                                {{ kart }}, {{ customisation }});"
                                    href="#"
                                    class="edit-button"
                                    data-toggle="modal"
