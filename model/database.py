@@ -38,6 +38,9 @@ class Time(db.Model):
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
     person = db.relationship('Person', backref=db.backref('times', lazy='dynamic'))
 
+    track_id = db.Column(db.Integer, db.ForeignKey('track.id'))
+    track = db.relationship('Track', backref=db.backref('times', lazy='dynamic'))
+
     character = db.Column(db.String)
     kart_body = db.Column(db.String)
     kart_wheels = db.Column(db.String)
