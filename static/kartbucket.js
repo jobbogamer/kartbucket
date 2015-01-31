@@ -20,6 +20,8 @@ function prepareEditModal(trackID, trackName, personID, personName, character, k
     $("#edit-modal-glider-field").val(glider);
 
     $("#edit-modal-proof-field").val(null);
+    $("#proof-url").html("");
+    $("#upload-indicator").html('<i class="fa fa-fw fa-circle-o"></i>');
 
     if (!allowsCustomisation)
     {
