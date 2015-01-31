@@ -172,28 +172,22 @@ a#edit-modal-error-popover {
 	cursor: pointer;
 }
 
+div#edit-modal .modal-body {
+	padding-bottom: 0;
+}
+
+span#proof-url a {
+	color: #737373;
+}
+
+span#proof-url a:hover {
+	color: #00BD83;
+}
+
 div#embed-modal-body {
 	text-align: center;
 }
 
 div#embed-modal-body img {
 	max-width: 100%;
-}
-
-div#embed-modal-body div.video-wrapper {
-	height: 0;
-
-	padding-top: 25px;
-	padding-bottom: 56.25%;
-
-	position: relative;
-}
-
-div#embed-modal-body div.video-wrapper iframe {
-	width: 100%;
-	height: 100%;
-
-	position: absolute;
-	top: 0;
-	left: 0;
 }

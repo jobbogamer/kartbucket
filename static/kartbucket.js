@@ -1,6 +1,7 @@
 
 var newTrackID = -1;
 var newPersonID = -1;
+var newProofURL = "";
 
 function prepareEditModal(trackID, trackName, personID, personName, character, kart, wheels, glider, choiceOfKart, allowsCustomisation)
 {
@@ -68,4 +69,23 @@ function submitTime()
 
         }
     });
+}
+
+function uploadToImgur(file, form)
+{
+    $("#upload-indicator").html('<i class="fa fa-fw fa-spin fa-circle-o-notch"></i>');
+    if (!file || !file.type.match(/image.*/)) return;
+    var fd = new FormData();
+    fd.append("image", file);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://api.imgur.com/3/image.json");
+    xhr.onload = function() {
+        var result = JSON.parse(xhr.responseText).data.link;
+        newProofURL = result;
+        $("#proof-url").html('<a href="' + newProofURL + '">' + newProofURL + '</a>');
+        $("#upload-indicator").html('<i class="fa fa-fw fa-circle"></i>');
+        form.value = null;
+    }
+    xhr.setRequestHeader('Authorization', 'Client-ID d8f7791810ee729');
+    xhr.send(fd);
 }

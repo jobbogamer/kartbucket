@@ -105,7 +105,13 @@
                             <div class="form-group">
                                 <label for="edit-modal-proof-field" class="col-xs-2 control-label">Proof</label>
                                 <div class="col-xs-10">
-                                    <input id="edit-modal-proof-field" type="file" class="form-control" onchange="upload(this.files[0], this)" accept="image/*" />
+                                    <div class="input-group">
+                                        <input id="edit-modal-proof-field" type="file" class="form-control" onchange="uploadToImgur(this.files[0], this)" accept="image/*" />
+                                        <div id="upload-indicator" class="input-group-addon">
+                                            <i class="fa fa-fw fa-circle-o"></i>
+                                        </div>
+                                    </div>
+                                    <span id="proof-url" class="help-block"></span>
                                 </div>
                             </div>
                         </form>
