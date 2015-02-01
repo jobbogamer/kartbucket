@@ -20,7 +20,8 @@ function prepareEditModal(trackID, trackName, personID, personName, character, k
     $("#edit-modal-wheels-field").val(wheels);
     $("#edit-modal-glider-field").val(glider);
 
-    $("#edit-modal-proof-field").val(null);
+    $("#edit-modal-upload-field").val(null);
+    $("#edit-modal-url-field").val("")
     $("#proof-url").html("");
     $("#upload-indicator").html('<a href="#" onclick="useURLForProof()"><i class="fa fa-fw fa-link"></i></a>');
 
