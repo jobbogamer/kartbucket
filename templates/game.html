@@ -84,7 +84,9 @@
                             <td class="time-cell" id="time-{{ track.id }}-{{ person.id }}">
                                 <a onclick="prepareInfoModal({{ track.id }}, '{{ track.name }}', {{ person.id }}, '{{ person.name }}');"
                                    class="time"
-                                   href="#">--:--.---</a>
+                                   href="#"
+                                   data-toggle="modal"
+                                   data-target="#info-modal">--:--.---</a>
                                 <a onclick="prepareEditModal({{ track.id }}, '{{ track.name }}',
                                                 '{{ person.id }}', '{{ person.name }}',
                                                 '', '', '', '',

@@ -128,6 +128,11 @@ def api_submit():
     return jsonify(utils.api_add(request.args))
 
 
+@app.route('/api/time/')
+def api_time():
+    return jsonify(utils.api_time(request.args))
+
+
 ##### Template Filters #####
 
 

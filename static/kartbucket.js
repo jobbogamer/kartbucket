@@ -52,15 +52,62 @@ function prepareInfoModal(trackID, trackName, personID, personName)
             'person': personID
         }
     }).done(function(result) {
-        if (result['success']) {
-            
-        } else {
+        if (result['success'])
+        {
+            $("#info-modal-content").show();
+            $("#info-modal-error-message").hide();
+
+            $("#info-modal-time-field").html(result['time']);
+
+            if (result['split1'])
+            {
+                $("#info-modal-split1-field").html(result['split1']);
+                $("#info-modal-split2-field").html(result['split2']);
+                $("#info-modal-split3-field").html(result['split3']);
+            }
+            else
+            {
+                $("#info-modal #split1-field").hide();
+                $("#info-modal #split2-field").hide();
+                $("#info-modal #split3-field").hide();
+            }
+
+            $("#info-modal-character-field").html(result['character']);
+
+            if (result['allows_customisation'])
+            {
+                $("#info-modal-kart-field").html(result['kart']);
+                $("#info-modal-wheels-field").html(result['wheels']);
+                $("#info-modal-glider-field").html(result['glider']);
+            }
+            else
+            {
+                $("#info-modal #wheels-field").hide();
+                $("#info-modal #glider-field").hide();
+
+                if (result['choice_of_kart'])
+                {
+                    $("#info-modal-kart-field").html(result['kart']);
+                }
+                else
+                {
+                    $("#info-modal #kart-field").hide();
+                }
+            }
+
+            if (result['proof_url'])
+            {
+                $("#info-modal-image").html('<img id="proof-image" src="' + result['proof_url'] + '" />');
+            }
+        }
+        else
+        {
             $("#info-modal-error-content").html(result['message']);
             $("#info-modal-error-message").show();
             $("#info-modal-content").hide();
         }
     }).fail(function() {
-        $("#info-modal-error-content").html("The server could not be contacted, or an error occurred.");
+        $("#info-modal-error-content").html("The server couldn't be contacted, or an error occurred.");
         $("#info-modal-error-message").show();
         $("#info-modal-content").hide();
     });

@@ -75,6 +75,43 @@ def api_add(args):
         return result
 
 
+def api_time(args):
+    track_id = int(args.get('track', ''))
+    person_id = int(args.get('person', ''))
+
+    result = {
+        'success': False
+    }
+
+    time = database.get_track_time_for_person(track_id, person_id)
+    track = database.get(database.Track, track_id)
+    game = database.get(database.Game, track.game_id)
+
+    if time is None:
+        person = database.get(database.Person, person_id)
+        result['message'] = "{0} hasn't set a time for {1}.".format(person.name, track.name)
+        return result
+
+    result['success'] = True
+    result['time'] = str(time)
+    result['split1'] = split_to_string(time.split1_mils)
+    result['split2'] = split_to_string(time.split2_mils)
+    result['split3'] = split_to_string(time.split3_mils)
+    result['character'] = time.character or '???'
+    result['proof_url'] = time.proof_url
+    result['choice_of_kart'] = game.choice_of_kart
+    result['allows_customisation'] = game.allows_customisation
+    
+    if game.allows_customisation:
+        result['kart'] = time.kart_body or '???'
+        result['wheels'] = time.kart_wheels or '???'
+        result['glider'] = time.kart_glider or '???'
+    elif game.choice_of_kart:
+        result['kart'] = time.kart_body or '???'
+
+    return result
+
+
 def build_times_structure(game_id):
     game = database.get(database.Game, game_id)
     people = database.get_all(database.Person)
@@ -115,6 +152,28 @@ def split_str_to_milliseconds(split_str):
         return -1
 
     return (seconds * 1000)
+
+
+def split_to_string(milliseconds):
+    if milliseconds == -1:
+        return None
+
+    seconds = int(milliseconds / 1000)
+    leftover_milliseconds = milliseconds - (seconds * 1000)
+
+    if seconds < 10:
+        seconds_str = "0{}".format(seconds)
+    else:
+        seconds_str = str(seconds)
+
+    if leftover_milliseconds < 10:
+        milliseconds_str = "00{}".format(leftover_milliseconds)
+    elif leftover_milliseconds < 100:
+        milliseconds_str = "0{}".format(leftover_milliseconds)
+    else:
+        milliseconds_str = str(leftover_milliseconds)
+
+    return "{0}.{1}".format(seconds_str, milliseconds_str)
 
 
 def time_str_to_milliseconds(time_str):
