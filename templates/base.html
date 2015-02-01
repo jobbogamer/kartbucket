@@ -30,19 +30,15 @@
                     </div>
                     <div class="modal-body">
                         <div id="edit-modal-error-message" class="alert alert-danger">
-                            <h4 id="edit-modal-error-title">Something went wrong.</h4>
-                            <p id="edit-modal-error-content">That link couldn't be added; try again later. <a id="edit-modal-error-popover" data-toggle="popover" data-content="">What was the error?</a></p>
+                            <h4 id="edit-modal-error-title"></h4>
+                            <p id="edit-modal-error-content"></p>
                         </div>
 
                         <form class="form-horizontal">
                             <div class="form-group">
                                 <label for="edit-modal-person-field" class="col-xs-2 control-label">Person</label>
                                 <div class="col-xs-10">
-                                    <select id="edit-modal-person-field" class="form-control">
-                                        {% for person in options['all_people'] %}
-                                        <option value="{{ person.id }}">{{ person.name }}</option>
-                                        {% endfor %}
-                                    </select>
+                                    <p id="edit-modal-person-field" class="form-control-static"></p>
                                 </div>
                             </div>
 
@@ -102,22 +98,34 @@
 
                             <hr/>
 
-                            <div class="form-group">
-                                <label for="edit-modal-proof-field" class="col-xs-2 control-label">Proof</label>
+                            <div id="upload-field" class="form-group">
+                                <label for="edit-modal-upload-field" class="col-xs-2 control-label">Image</label>
                                 <div class="col-xs-10">
                                     <div class="input-group">
-                                        <input id="edit-modal-proof-field" type="file" class="form-control" onchange="uploadToImgur(this.files[0], this)" accept="image/*" />
-                                        <div id="upload-indicator" class="input-group-addon">
-                                            <i class="fa fa-fw fa-circle-o"></i>
-                                        </div>
+                                        <input id="edit-modal-upload-field" type="file" class="form-control" onchange="uploadToImgur(this.files[0], this)" accept="image/*" />
+                                        <div id="upload-indicator" class="input-group-addon"></div>
                                     </div>
                                     <span id="proof-url" class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div id="url-field" class="form-group">
+                                <label for="edit-modal-url-field" class="col-xs-2 control-label">Image URL</label>
+                                <div class="col-xs-10">
+                                    <div class="input-group">
+                                        <input id="edit-modal-url-field" type="text" class="form-control" />
+                                        <div id="upload-indicator" class="input-group-addon">
+                                            <a href="#" onclick="useFileForProof();">
+                                                <i class="fa fa-fw fa-file-o"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button id="edit-modal-cancel-button" type="button" class="btn btn-default" data-dismiss="modal" onclick="hideAddError();">Cancel</button>
+                        <button id="edit-modal-cancel-button" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         <button id="edit-modal-submit-button" type="button" class="btn btn-primary" onclick="submitTime();">Submit</button>
                     </div>
                 </div>

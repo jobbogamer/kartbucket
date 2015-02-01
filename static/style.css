@@ -176,6 +176,10 @@ div#edit-modal .modal-body {
 	padding-bottom: 0;
 }
 
+div#url-field {
+	display: none;
+}
+
 span#proof-url {
 	display: none;
 }
