@@ -7,6 +7,7 @@ var useFileUpload = true;
 function prepareEditModal(trackID, trackName, personID, personName, character, kart, wheels, glider, choiceOfKart, allowsCustomisation)
 {
     $("#edit-modal .modal-title").html("Submit Time - " + trackName);
+    $("#edit-modal-error-message").hide();
 
     $("#edit-modal-person-field").html(personName);
 
@@ -42,6 +43,8 @@ function prepareEditModal(trackID, trackName, personID, personName, character, k
 
 function submitTime()
 {
+    $("#edit-modal-error-message").slideUp();
+
     var time = $("#edit-modal-time-field").val();
     var split1 = $("#edit-modal-split1-field").val();
     var split2 = $("#edit-modal-split2-field").val();
@@ -89,6 +92,9 @@ function submitTime()
 function uploadToImgur(file, form)
 {
     $("#upload-indicator").html('<i class="fa fa-fw fa-spin fa-spinner"></i>');
+    $("#edit-modal-submit-button").prop("disabled", true);
+    $("#edit-modal-cancel-button").prop("disabled", true);
+
     if (!file || !file.type.match(/image.*/)) return;
     var fd = new FormData();
     fd.append("image", file);
@@ -99,7 +105,9 @@ function uploadToImgur(file, form)
         newProofURL = result;
         $("#proof-url").html('<a target="_blank" href="' + newProofURL + '">' + newProofURL + '</a>');
         $("#proof-url").slideDown();
-        $("#upload-indicator").html('<i class="fa fa-fw fa-circle"></i>');
+        $("#upload-indicator").html('<i class="fa fa-fw fa-check"></i>');
+        $("#edit-modal-submit-button").prop("disabled", false);
+        $("#edit-modal-cancel-button").prop("disabled", false);
         form.value = null;
     }
     xhr.setRequestHeader('Authorization', 'Client-ID d8f7791810ee729');
