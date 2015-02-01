@@ -55,9 +55,12 @@
                             {% set person_num = loop.index0 %}
                             {% set time = options['times'][track_index][person_num] %}
                                 {% if time %}
-                            <td>{{ time }}
+                            <td id="time-{{ track.id }}-{{ person.id }}">
+                                <a onclick="prepareInfoModal({{ track.id }}, {{ person.id }});"
+                                   class="time"
+                                   href="#">{{ time }}</a>
                                 <a onclick="prepareEditModal({{ track.id }}, '{{ track.name }}',
-                                                '{{ options['all_people'][person_num].id }}', '{{ options['all_people'][person_num].name }}',
+                                                '{{ person.id }}', '{{ person.name }}',
                                                 '{{ time.character }}', '{{ time.kart_body }}', '{{ time.kart_wheels }}', '{{ time.kart_glider }}',
                                                 {{ kart }}, {{ customisation }});"
                                    href="#"
@@ -67,18 +70,21 @@
                                     <i class="button fa fa-fw fa-pencil"></i>
                                 </a>
                             </td>
-                            <td>{{ time.character or '???' }}</td>
+                            <td id="character-{{ track.id }}-{{ person.id }}">{{ time.character or '???' }}</td>
                                     {% if options['game'].allows_customisation or options['game'].choice_of_kart %}
-                            <td>{{ time.kart_body or '???' }}</td>
+                            <td id="kart-{{ track.id }}-{{ person.id }}">{{ time.kart_body or '???' }}</td>
                                     {% endif %}
                                     {% if options['game'].allows_customisation %}
-                            <td>{{ time.kart_wheels or '???' }}</td>
-                            <td>{{ time.kart_glider or '???'}}</td>
+                            <td id="wheels-{{ track.id }}-{{ person.id }}">{{ time.kart_wheels or '???' }}</td>
+                            <td id="glider-{{ track.id }}-{{ person.id }}">{{ time.kart_glider or '???'}}</td>
                                     {% endif %}
                                 {% else %}
-                            <td>--:--.---
+                            <td class="time-cell" id="time-{{ track.id }}-{{ person.id }}">
+                                <a onclick="prepareInfoModal({{ track.id }}, {{ person.id }});"
+                                   class="time"
+                                   href="#">--:--.---</a>
                                 <a onclick="prepareEditModal({{ track.id }}, '{{ track.name }}',
-                                                '{{ options['all_people'][person_num].id }}', '{{ options['all_people'][person_num].name }}',
+                                                '{{ person.id }}', '{{ person.name }}',
                                                 '', '', '', '',
                                                 {{ kart }}, {{ customisation }});"
                                    href="#"
@@ -88,13 +94,13 @@
                                     <i class="button fa fa-fw fa-pencil"></i>
                                 </a>
                             </td>
-                            <td>---</td>
+                            <td id="character-{{ track.id }}-{{ person.id }}">---</td>
                                     {% if options['game'].allows_customisation or options['game'].choice_of_kart %}
-                            <td>---</td>
+                            <td id="kart-{{ track.id }}-{{ person.id }}">---</td>
                                     {% endif %}
                                     {% if options['game'].allows_customisation %}
-                            <td>---</td>
-                            <td>---</td>
+                            <td id="wheels-{{ track.id }}-{{ person.id }}">---</td>
+                            <td id="glider-{{ track.id }}-{{ person.id }}">---</td>
                                     {% endif %}
                                 {% endif %}
                             {% endfor %}

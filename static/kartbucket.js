@@ -81,7 +81,12 @@ function submitTime()
         }
     }).done(function(result) {
         if (result['success']) {
-            
+            $("#time-" + newTrackID + "-" + newPersonID + " .time").html(time);
+            $("#character-" + newTrackID + "-" + newPersonID).html(character);
+            $("#kart-" + newTrackID + "-" + newPersonID).html(kart);
+            $("#wheels-" + newTrackID + "-" + newPersonID).html(wheels);
+            $("#glider-" + newTrackID + "-" + newPersonID).html(glider);
+            $("#edit-modal").modal('hide');
         } else {
             $("#edit-modal-error-content").html(result['message']);
             $("#edit-modal-error-message").slideDown();
