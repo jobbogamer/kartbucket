@@ -80,7 +80,8 @@ function submitTime()
         if (result['success']) {
             
         } else {
-            console.log(result);
+            $("#edit-modal-error-content").html(result['message']);
+            $("#edit-modal-error-message").slideDown();
         }
     });
 }
