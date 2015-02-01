@@ -99,6 +99,10 @@ function prepareInfoModal(trackID, trackName, personID, personName)
             {
                 $("#info-modal-image").html('<img id="proof-image" src="' + result['proof_url'] + '" />');
             }
+            else
+            {
+                $("#info-modal-image").html('<p id="no-proof-image">No proof image available.</p>');
+            }
         }
         else
         {
