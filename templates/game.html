@@ -56,7 +56,7 @@
                             {% set time = options['times'][track_index][person_num] %}
                                 {% if time %}
                             <td id="time-{{ track.id }}-{{ person.id }}">
-                                <a onclick="prepareInfoModal({{ track.id }}, {{ person.id }});"
+                                <a onclick="prepareInfoModal({{ track.id }}, '{{ track.name }}', {{ person.id }}, '{{ person.name }}');"
                                    class="time"
                                    href="#"
                                    data-toggle="modal"
@@ -82,7 +82,7 @@
                                     {% endif %}
                                 {% else %}
                             <td class="time-cell" id="time-{{ track.id }}-{{ person.id }}">
-                                <a onclick="prepareInfoModal({{ track.id }}, {{ person.id }});"
+                                <a onclick="prepareInfoModal({{ track.id }}, '{{ track.name }}', {{ person.id }}, '{{ person.name }}');"
                                    class="time"
                                    href="#">--:--.---</a>
                                 <a onclick="prepareEditModal({{ track.id }}, '{{ track.name }}',

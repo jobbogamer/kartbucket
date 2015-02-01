@@ -41,8 +41,10 @@ function prepareEditModal(trackID, trackName, personID, personName, character, k
     newPersonID = personID;
 }
 
-function prepareInfoModal(trackID, personID)
+function prepareInfoModal(trackID, trackName, personID, personName)
 {
+    $("#info-modal .modal-title").html(personName + "'s Time - " + trackName);
+
     $.ajax({
         url: '/api/time',
         data: {
@@ -54,11 +56,13 @@ function prepareInfoModal(trackID, personID)
             
         } else {
             $("#info-modal-error-content").html(result['message']);
-            $("#info-modal-error-message").slideDown();
+            $("#info-modal-error-message").show();
+            $("#info-modal-content").hide();
         }
     }).fail(function() {
         $("#info-modal-error-content").html("The server could not be contacted, or an error occurred.");
-        $("#info-modal-error-message").slideDown();
+        $("#info-modal-error-message").show();
+        $("#info-modal-content").hide();
     });
 }
 
