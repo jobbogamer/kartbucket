@@ -204,6 +204,10 @@ span#proof-url a:hover {
 	color: #00BD83;
 }
 
+div#info-modal-image {
+	text-align: center;
+}
+
 img#proof-image {
 	max-width: 100%;
 }
