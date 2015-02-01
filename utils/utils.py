@@ -71,7 +71,7 @@ def api_add(args):
         return result
 
     else:
-        result['message'] = "You'll have to do better! The current time is {}.".format(current_time)
+        result['message'] = "You'll have to do better! Your current best time is {}.".format(current_time)
         return result
 
 
