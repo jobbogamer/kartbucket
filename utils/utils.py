@@ -61,10 +61,10 @@ def api_add(args):
         new_time.split2_mils = split2_mils
         new_time.split3_mils = split3_mils
         new_time.character = character
-        new_time.kart = kart
-        new_time.wheels = wheels
-        new_time.glider = glider
-        new_time.proof = proof
+        new_time.kart_body = kart
+        new_time.kart_wheels = wheels
+        new_time.kart_glider = glider
+        new_time.proof_url = proof
         database.replace(current_time, new_time)
 
         result['success'] = True
