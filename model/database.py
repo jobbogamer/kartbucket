@@ -48,6 +48,27 @@ class Time(db.Model):
 
     proof_url = db.Column(db.String)
 
+    def __repr__(self):
+        minutes = int(self.milliseconds / (1000 * 60))
+        leftover_seconds = self.milliseconds - (minutes * (1000 * 60))
+        seconds = int(leftover_seconds / 1000)
+        leftover_milliseconds = leftover_seconds - (seconds * 1000)
+
+        if seconds < 10:
+            seconds_str = "0{}".format(seconds)
+        else:
+            seconds_str = str(seconds)
+
+        if leftover_milliseconds < 10:
+            milliseconds_str = "00{}".format(leftover_milliseconds)
+        elif leftover_milliseconds < 100:
+            milliseconds_str = "0{}".format(leftover_milliseconds)
+        else:
+            milliseconds_str = str(leftover_milliseconds)
+
+        return "{0}:{1}.{2}".format(minutes, seconds_str, milliseconds_str)
+
+
     def __lt__(self, other):
         if self.minutes < other.minutes:
             return True
@@ -120,6 +141,10 @@ def get_game_by_short_name(short_name):
     return game
 
 
+def get_track_time_for_person(track_id, person_id):
+    return get(Track, track_id).times.filter_by(person_id=person_id).first()
+
+
 def track_already_exists(name, game_id):
     track = Track.query.filter_by(name=name, game_id=game_id).first()
     return (track is not None)
@@ -128,6 +153,13 @@ def track_already_exists(name, game_id):
 def person_already_exists(name):
     person = Person.query.filter_by(name=name).first()
     return (person is not None)
+
+
+def replace(old_obj, new_obj):
+    if old_obj is not None:
+        db.session.delete(old_obj)
+    db.session.add(new_obj)
+    commit_changes()
 
 
 ##### High level functions #####

@@ -123,7 +123,9 @@ def setup():
 ##### API Endpoints #####
 
 
-
+@app.route('/api/submit/')
+def api_submit():
+    return jsonify(utils.api_add(request.args))
 
 
 ##### Template Filters #####
