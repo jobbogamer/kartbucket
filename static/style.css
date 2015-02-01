@@ -13,12 +13,20 @@ body {
 
 a {
 	color: #000000;
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
 a:hover {
 	color: #00bd83;
 	text-decoration: none;
+}
+
+a:visited {
+	color: #000000;
+}
+
+*:focus {
+    outline: none !important;
 }
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2,
@@ -157,6 +165,10 @@ div.track {
 
 td:hover a.edit-button {
 	visibility: visible;
+}
+
+td.time-cell a {
+	outline: none;
 }
 
 a.edit-button {

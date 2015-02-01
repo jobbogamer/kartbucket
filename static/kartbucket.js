@@ -41,6 +41,28 @@ function prepareEditModal(trackID, trackName, personID, personName, character, k
     newPersonID = personID;
 }
 
+function prepareInfoModal(trackID, personID)
+{
+    $.ajax({
+        url: '/api/time',
+        data: {
+            'track' : trackID,
+            'person': personID
+        }
+    }).done(function(result) {
+        if (result['success']) {
+            
+        } else {
+            $("#info-modal-error-content").html(result['message']);
+            $("#info-modal-error-message").slideDown();
+        }
+    }).fail(function() {
+        $("#info-modal-error-content").html("The server could not be contacted, or an error occurred.");
+        $("#info-modal-error-message").slideDown();
+    });
+}
+
+
 function submitTime()
 {
     $("#edit-modal-error-message").slideUp();
