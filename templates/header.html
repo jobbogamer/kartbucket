@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
                 {% for game in options['all_games'] %}
-                <li class="hidden-sm hidden-md hidden-lg {% if options['active_page'] == game.full_name %}active{% endif %}"><a href="/game/{{ game.full_name }}">{{ game.full_name }}</a></li>
+                <li class="hidden-sm hidden-md hidden-lg {% if options['active_page'] == game.full_name %}active{% endif %}"><a href="/game/{{ game.short_name }}">{{ game.full_name }}</a></li>
                 <li class="hidden-xs {% if options['active_page'] == game.short_name %}active{% endif %}"><a href="/game/{{ game.short_name }}">{{ game.short_name }}</a></li>
                 {% endfor %}
             </ul>
