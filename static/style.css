@@ -188,6 +188,10 @@ div#edit-modal .modal-body {
 	padding-bottom: 0;
 }
 
+div#info-modal-error-message {
+	display: none;
+}
+
 div#url-field {
 	display: none;
 }
