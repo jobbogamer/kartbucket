@@ -136,7 +136,9 @@ def api_time():
 ##### Template Filters #####
 
 
-
+@app.template_filter('replace_apostrophes')
+def replace_apostrophes(string):
+    return string.replace("'", "&#8217;")
 
 
 ##### Main #####

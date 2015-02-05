@@ -56,12 +56,12 @@
                             {% set time = options['times'][track_index][person_num] %}
                                 {% if time %}
                             <td id="time-{{ track.id }}-{{ person.id }}">
-                                <a onclick="prepareInfoModal({{ track.id }}, '{{ track.name }}', {{ person.id }}, '{{ person.name }}');"
+                                <a onclick="prepareInfoModal({{ track.id }}, '{{ track.name | replace_apostrophes }}', {{ person.id }}, '{{ person.name }}');"
                                    class="time"
                                    href="#"
                                    data-toggle="modal"
                                    data-target="#info-modal">{{ time }}</a>
-                                <a onclick="prepareEditModal({{ track.id }}, '{{ track.name }}',
+                                <a onclick="prepareEditModal({{ track.id }}, '{{ track.name | replace_apostrophes }}',
                                                 '{{ person.id }}', '{{ person.name }}',
                                                 '{{ time.character }}', '{{ time.kart_body }}', '{{ time.kart_wheels }}', '{{ time.kart_glider }}',
                                                 {{ kart }}, {{ customisation }});"
@@ -82,12 +82,12 @@
                                     {% endif %}
                                 {% else %}
                             <td class="time-cell" id="time-{{ track.id }}-{{ person.id }}">
-                                <a onclick="prepareInfoModal({{ track.id }}, '{{ track.name }}', {{ person.id }}, '{{ person.name }}');"
+                                <a onclick="prepareInfoModal({{ track.id }}, '{{ track.name | replace_apostrophes }}', {{ person.id }}, '{{ person.name }}');"
                                    class="time"
                                    href="#"
                                    data-toggle="modal"
                                    data-target="#info-modal">--:--.---</a>
-                                <a onclick="prepareEditModal({{ track.id }}, '{{ track.name }}',
+                                <a onclick="prepareEditModal({{ track.id }}, '{{ track.name | replace_apostrophes }}',
                                                 '{{ person.id }}', '{{ person.name }}',
                                                 '', '', '', '',
                                                 {{ kart }}, {{ customisation }});"
