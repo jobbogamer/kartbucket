@@ -52,7 +52,7 @@ def api_add(args):
         split3_mils = -1
 
     current_time = database.get_track_time_for_person(track_id, person_id)
-    if (current_time is None) or milliseconds < current_time.milliseconds:
+    if (current_time is None) or milliseconds <= current_time.milliseconds:
         new_time = database.Time()
         new_time.track_id = track_id
         new_time.person_id = person_id
