@@ -19,7 +19,9 @@ except KeyError as error:
 
 database.db.init_app(app)
 
-options = {}
+options = {
+    'version': "1.0.0"
+}
 
 # Horrible flask-ness to allow access to the database from outside of
 # a route
