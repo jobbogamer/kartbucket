@@ -73,7 +73,7 @@
                             </td>
                             <td id="difference-{{ track.id }}-{{ person.id }}" class="{{ difference_class }}">
                                 {% if best_time == time %}
-                                0.000
+                                00.000
                                 {% else %}
                                 {{ (time - best_time) | to_seconds }}
                                 {% endif %}
