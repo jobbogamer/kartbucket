@@ -155,11 +155,7 @@ def replace_apostrophes(string):
 
 @app.template_filter('to_seconds')
 def to_seconds(milliseconds):
-    seconds = float(milliseconds) / 1000
-    if seconds < 10:
-        return "0{}".format(seconds)
-    else:
-        return seconds
+    return float(milliseconds) / 1000
 
 
 ##### Main #####
