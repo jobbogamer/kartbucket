@@ -54,9 +54,9 @@
                                     {% else %}
                                         {% set difference_class = (time - best_time) | losing_class %}
                                     {% endif %}
-                            <td id="time-{{ track.id }}-{{ person.id }}">
+                            <td class="time-cell" id="time-{{ track.id }}-{{ person.id }}">
                                 <a onclick="prepareInfoModal({{ track.id }}, '{{ track.name | replace_apostrophes }}', {{ person.id }}, '{{ person.name }}');"
-                                   class="time {{ difference_class }}"
+                                   class="time"
                                    href="#"
                                    data-toggle="modal"
                                    data-target="#info-modal">{{ time }}</a>

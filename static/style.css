@@ -171,6 +171,66 @@ td.time-cell a {
 	outline: none;
 }
 
+td.winning {
+	color: #4CAF50;
+}
+
+td.losing-0 {
+	color: #FFEB3B;
+}
+
+td.losing-1 {
+	color: #FFDE32;
+}
+
+td.losing-2 {
+	color: #FFD129;
+}
+
+td.losing-3 {
+	color: #FFC420;
+}
+
+td.losing-4 {
+	color: #FFB717;
+}
+
+td.losing-5 {
+	color: #FFAA0E;
+}
+
+td.losing-6 {
+	color: #FF9800;
+}
+
+td.losing-7 {
+	color: #FE8C07;
+}
+
+td.losing-8 {
+	color: #FC800F;
+}
+
+td.losing-9 {
+	color: #FB7416;
+}
+
+td.losing-10 {
+	color: #F9681E;
+}
+
+td.losing-11 {
+	color: #F85C25;
+}
+
+td.losing-12 {
+	color: #F6502D;
+}
+
+td.losing-13 {
+	color: #F44336;
+}
+
 a.edit-button {
 	float: right;
 	visibility: hidden;

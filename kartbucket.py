@@ -139,14 +139,11 @@ def api_time():
 
 @app.template_filter('losing_class')
 def losing_class(difference):
-    if difference <= 1000:
-        return "green"
-    elif difference <= 1500:
-        return "yellow"
-    elif difference <= 2000:
-        return "orange"
+    if difference > 3000:
+        return "losing-13"
     else:
-        return "red"
+        amount = int(difference / 250)
+        return "losing-{}".format(amount)
 
 
 @app.template_filter('replace_apostrophes')
