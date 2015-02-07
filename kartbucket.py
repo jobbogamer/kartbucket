@@ -58,6 +58,7 @@ def game_name(game_name):
     options['people'] = database.get_all(database.Person)
 
     options['times'] = utils.build_times_structure(game.id)
+    options['best_times'] = utils.build_best_times(game.id)
 
     return render_template('game.html', options=options)
 
@@ -136,9 +137,30 @@ def api_time():
 ##### Template Filters #####
 
 
+@app.template_filter('losing_class')
+def losing_class(difference):
+    if difference <= 1000:
+        return "green"
+    elif difference <= 1500:
+        return "yellow"
+    elif difference <= 2000:
+        return "orange"
+    else:
+        return "red"
+
+
 @app.template_filter('replace_apostrophes')
 def replace_apostrophes(string):
     return string.replace("'", "&#8217;")
+
+
+@app.template_filter('to_seconds')
+def to_seconds(milliseconds):
+    seconds = float(milliseconds) / 1000
+    if seconds < 10:
+        return "0{}".format(seconds)
+    else:
+        return seconds
 
 
 ##### Main #####

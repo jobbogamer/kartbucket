@@ -112,6 +112,26 @@ def api_time(args):
     return result
 
 
+def build_best_times(game_id):
+    game = database.get(database.Game, game_id)
+    people = database.get_all(database.Person)
+    tracks = game.tracks.all()
+
+    struct = []
+
+    for track in tracks:
+        stored_times = track.times.all()
+        lowest_time = None
+
+        for time in stored_times:
+            if lowest_time is None or time < lowest_time:
+                lowest_time = time
+
+        struct.append(lowest_time)        
+
+    return struct
+
+
 def build_times_structure(game_id):
     game = database.get(database.Game, game_id)
     people = database.get_all(database.Person)

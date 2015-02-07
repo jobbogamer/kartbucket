@@ -70,17 +70,7 @@ class Time(db.Model):
 
 
     def __lt__(self, other):
-        if self.minutes < other.minutes:
-            return True
-
-        elif (self.minutes == other.minutes) and (self.seconds < other.seconds):
-            return True
-
-        elif (self.minutes == other.minutes) and (self.seconds == other.seconds) and (self.milliseconds < other.milliseconds):
-            return True
-
-        else:
-            return False
+        return (self.milliseconds < other.milliseconds)
 
 
     def __le__(self, other):
@@ -96,7 +86,7 @@ class Time(db.Model):
 
 
     def __eq__(self, other):
-        return (self.minutes == other.minutes) and (self.seconds == other.seconds) and (self.milliseconds == other.milliseconds)
+        return (self.milliseconds == other.milliseconds)
 
 
     def __ne__(self, other):

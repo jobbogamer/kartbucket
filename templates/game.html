@@ -26,20 +26,13 @@
                         <tr>
                             <th class="person-name" rowspan="2"></th>
                             {% for person in options['people'] %}
-                            <th class="person-name" colspan="{{ span }}">{{ person.name }}</th>
+                            <th class="person-name" colspan="2">{{ person.name }}</th>
                             {% endfor %}
                         </tr>
                         <tr>
                             {% for person in options['people'] %}
                             <th>Time</th>
-                            <th>Character</th>
-                            {% if options['game'].allows_customisation or options['game'].choice_of_kart %}
-                            <th>Kart</th>
-                            {% endif %}
-                            {% if options['game'].allows_customisation %}
-                            <th>Wheels</th>
-                            <th>Glider</th>
-                            {% endif %}
+                            <th>Difference</th>
                             {% endfor %}
                         </tr>
                     </thead>
@@ -54,10 +47,16 @@
                             {% for person in options['people'] %}
                             {% set person_num = loop.index0 %}
                             {% set time = options['times'][track_index][person_num] %}
+                            {% set best_time = options['best_times'][track_index] %}
                                 {% if time %}
+                                    {% if time == best_time %}
+                                        {% set difference_class = "winning" %}
+                                    {% else %}
+                                        {% set difference_class = (time - best_time) | losing_class %}
+                                    {% endif %}
                             <td id="time-{{ track.id }}-{{ person.id }}">
                                 <a onclick="prepareInfoModal({{ track.id }}, '{{ track.name | replace_apostrophes }}', {{ person.id }}, '{{ person.name }}');"
-                                   class="time"
+                                   class="time {{ difference_class }}"
                                    href="#"
                                    data-toggle="modal"
                                    data-target="#info-modal">{{ time }}</a>
@@ -72,14 +71,13 @@
                                     <i class="button fa fa-fw fa-pencil"></i>
                                 </a>
                             </td>
-                            <td id="character-{{ track.id }}-{{ person.id }}">{{ time.character or '???' }}</td>
-                                    {% if options['game'].allows_customisation or options['game'].choice_of_kart %}
-                            <td id="kart-{{ track.id }}-{{ person.id }}">{{ time.kart_body or '???' }}</td>
-                                    {% endif %}
-                                    {% if options['game'].allows_customisation %}
-                            <td id="wheels-{{ track.id }}-{{ person.id }}">{{ time.kart_wheels or '???' }}</td>
-                            <td id="glider-{{ track.id }}-{{ person.id }}">{{ time.kart_glider or '???'}}</td>
-                                    {% endif %}
+                            <td id="difference-{{ track.id }}-{{ person.id }}" class="{{ difference_class }}">
+                                {% if best_time == time %}
+                                0.000
+                                {% else %}
+                                {{ (time - best_time) | to_seconds }}
+                                {% endif %}
+                            </td>
                                 {% else %}
                             <td class="time-cell" id="time-{{ track.id }}-{{ person.id }}">
                                 <a onclick="prepareInfoModal({{ track.id }}, '{{ track.name | replace_apostrophes }}', {{ person.id }}, '{{ person.name }}');"
@@ -98,14 +96,9 @@
                                     <i class="button fa fa-fw fa-pencil"></i>
                                 </a>
                             </td>
-                            <td id="character-{{ track.id }}-{{ person.id }}">---</td>
-                                    {% if options['game'].allows_customisation or options['game'].choice_of_kart %}
-                            <td id="kart-{{ track.id }}-{{ person.id }}">---</td>
-                                    {% endif %}
-                                    {% if options['game'].allows_customisation %}
-                            <td id="wheels-{{ track.id }}-{{ person.id }}">---</td>
-                            <td id="glider-{{ track.id }}-{{ person.id }}">---</td>
-                                    {% endif %}
+                            <td id="difference-{{ track.id }}-{{ person.id }}">
+                                ---
+                            </td>
                                 {% endif %}
                             {% endfor %}
                         </tr>
