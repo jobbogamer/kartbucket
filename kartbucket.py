@@ -157,7 +157,15 @@ def replace_apostrophes(string):
 def to_seconds(milliseconds):
     seconds = int(milliseconds / 1000)
     leftover_milliseconds = milliseconds - (seconds * 1000)
-    return "{0}.{1}".format(seconds, leftover_milliseconds)
+
+    if leftover_milliseconds < 10:
+        milliseconds_str = "00{}".format(leftover_milliseconds)
+    elif leftover_milliseconds < 100:
+        milliseconds_str = "0{}".format(leftover_milliseconds)
+    else:
+        milliseconds_str = str(milliseconds)
+
+    return "{0}.{1}".format(seconds, milliseconds_str)
 
 
 ##### Main #####
