@@ -61,6 +61,9 @@ function prepareInfoModal(trackID, trackName, personID, personName)
 
             if (result['split1'])
             {
+                $("#info-modal #split1-field").show();
+                $("#info-modal #split2-field").show();
+                $("#info-modal #split3-field").show();
                 $("#info-modal-split1-field").html(result['split1']);
                 $("#info-modal-split2-field").html(result['split2']);
                 $("#info-modal-split3-field").html(result['split3']);
