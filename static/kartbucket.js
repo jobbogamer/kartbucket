@@ -44,6 +44,17 @@ function prepareEditModal(trackID, trackName, personID, personName, character, k
 function prepareInfoModal(trackID, trackName, personID, personName)
 {
     $("#info-modal .modal-title").html(personName + "'s Time - " + trackName);
+    $("#info-modal-error-message").hide();
+
+    $("#info-modal-time-field").html("");
+    $("#info-modal-split1-field").html("");
+    $("#info-modal-split2-field").html("");
+    $("#info-modal-split3-field").html("");
+    $("#info-modal-character-field").html("");
+    $("#info-modal-kart-field").html("");
+    $("#info-modal-wheels-field").html("");
+    $("#info-modal-glider-field").html("");
+    $("#info-modal-image").html("");
 
     $.ajax({
         url: '/api/time',
