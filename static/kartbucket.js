@@ -134,6 +134,9 @@ function prepareInfoModal(trackID, trackName, personID, personName)
 
 function submitTime()
 {
+    $("#edit-modal-submit-button").prop("disabled", true);
+    $("#edit-modal-cancel-button").prop("disabled", true);
+
     $("#edit-modal-error-message").slideUp();
 
     var time = $("#edit-modal-time-field").val();
@@ -182,6 +185,9 @@ function submitTime()
             $("#edit-modal-error-content").html(result['message']);
             $("#edit-modal-error-message").slideDown();
         }
+
+        $("#edit-modal-submit-button").prop("disabled", false);
+        $("#edit-modal-cancel-button").prop("disabled", false);
     });
 }
 
