@@ -163,7 +163,7 @@ def to_seconds(milliseconds):
     elif leftover_milliseconds < 100:
         milliseconds_str = "0{}".format(leftover_milliseconds)
     else:
-        milliseconds_str = str(milliseconds)
+        milliseconds_str = str(leftover_milliseconds)
 
     return "{0}.{1}".format(seconds, milliseconds_str)
 
