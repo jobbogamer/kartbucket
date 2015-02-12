@@ -155,7 +155,9 @@ def replace_apostrophes(string):
 
 @app.template_filter('to_seconds')
 def to_seconds(milliseconds):
-    return float(milliseconds) / 1000
+    seconds = int(milliseconds / 1000)
+    leftover_milliseconds = milliseconds - (seconds * 1000)
+    return "{0}.{1}".format(seconds, leftover_milliseconds)
 
 
 ##### Main #####
