@@ -20,7 +20,7 @@ except KeyError as error:
 database.db.init_app(app)
 
 options = {
-    'version': "1.0.5"
+    'version': "1.0.6"
 }
 
 # Horrible flask-ness to allow access to the database from outside of
